@@ -6,7 +6,9 @@ file.
 
 To run the program, first ensure the file input matches the expected format.
 Each log entry should be on a new line, with a path and IP address source
-separated by a space.
+separated by a space as in the included sample `webserver.log`. It would be 
+nice to include some validations of the file input format, as well as more robust 
+exception handling, in future iterations of this program.
 
 After ensuring you have ruby 2.7.1 installed, run the program with:
 `ruby ./log_parser.rb $file`
