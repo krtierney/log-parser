@@ -14,5 +14,11 @@ describe Formatter do
         @formatter.print_all_results
       end
     end
+
+    it 'prints unique visit counts for a page' do
+      assert_output(/home 	 3 unique views/) do
+        @formatter.print_all_results
+      end
+    end
   end
 end
