@@ -7,7 +7,7 @@ module Stats
     end.sort_by(&:last).reverse
   end
 
-  def uniques_by_page
-    # TO DO
+  def uniques_by_page(log)
+    log.transform_values(&:count).sort_by(&:last).reverse
   end
 end
