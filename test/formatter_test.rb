@@ -4,11 +4,15 @@ require_relative 'spec_helper'
 
 describe Formatter do
   before do
-    logs = Parser.new(File.new('./webserver.log'))
+    logs = Parser.new(File.new('./test/test.log')).logged_visits
     @formatter = Formatter.new(logs)
   end
 
-  it 'outputs to the console' do
-    _(@formatter.print_all_results).must_equal 'Crunching the numbers...'
+  describe 'outputs formatted data to the console' do
+    it 'prints the aggregated visit total for a page' do
+      assert_output(/index 	 6 visits/) do
+        @formatter.print_all_results
+      end
+    end
   end
 end

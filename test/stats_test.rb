@@ -14,7 +14,7 @@ describe Stats do
     end
 
     it 'matches expected output for the test log' do
-      expected_values = [['/about', 2], ['/contact', 3], ['/home', 3], ['/help_page/1', 5], ['/index', 6]]
+      expected_values = [['/index', 6], ['/help_page/1', 5], ['/home', 3], ['/contact', 3], ['/about', 2]]
       assert_equal(@formatter.visits_by_page(@logs), expected_values)
     end
   end

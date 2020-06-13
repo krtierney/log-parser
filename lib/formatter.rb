@@ -10,8 +10,10 @@ class Formatter
   end
 
   def print_all_results
-    p 'Crunching the numbers...'
-
-    # visits_by_page(@logs)
+    output = "Visits by page: \n"
+    visits_by_page(@logs).each do |a|
+      output += "#{a.first} \t #{a.last} visits \n"
+    end
+    puts output
   end
 end
