@@ -4,13 +4,13 @@ require_relative 'spec_helper'
 
 describe Parser do
   before do
-    file = File.new('./webserver.log')
-    @parser = Parser.new(file)
+    file = File.new('./test/test.log')
+    @logs = Parser.new(file).logged_visits
   end
 
-  it 'parses a file into log entries with a path and source IP' do
-    logs = @parser.logged_visits
-
-    _(logs['/help_page/1']).must_equal ['200.017.277.774']
+  describe 'logging visits per page' do
+    it 'increments the visits from each IP' do
+      _(@logs['/index']).must_equal '444.701.448.104' => 5, '1.1.1.1' => 1
+    end
   end
 end
