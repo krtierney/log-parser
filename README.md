@@ -10,10 +10,20 @@ separated by a space as in the included sample `webserver.log`. It would be
 nice to include some validations of the file input format, as well as more robust 
 exception handling, in future iterations of this program.
 
-After ensuring you have ruby 2.7.1 installed, run the program with:
+First, install the dependencies. I've tried to keep it light, dependency-wise, so we're 
+using MiniTest instead of RSpec. The program specifies ruby 2.7.1, but should run fine
+on earlier Ruby versions if you change the Gemfile and .ruby-version files to point to 
+the version of Ruby you'd like to use.
+
+1. Ensure you have Ruby installed
+2. Run `gem install bundler` if you don't have the bundler gem installed for your Ruby version yet
+3. Run `bundle install` to install the Gemfile dependencies
+
+
+Run the program with:
 `ruby ./log_parser.rb $file`
 
-Test can be run with:
+Tests can be run with:
 `bundle exec rake test`
 
 Please note, this program should only be run with small log files and is limited

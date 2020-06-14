@@ -5,6 +5,7 @@ ruby '2.7.1'
 group :test do
   gem 'minitest', '~> 5.14', require: false
   gem 'rake', '~> 13.0', require: false
+  gem 'simplecov', '~> 0.18', require: false
 end
 
 group :development do
