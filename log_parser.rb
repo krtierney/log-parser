@@ -7,8 +7,8 @@ class LogParser
   def self.call(args)
     raise ArgumentError, 'A single file input is required' unless args.one?
 
-    @logs ||= parse_log(args.first)
-    print_stats_for(@logs)
+    logs = parse_log(args.first)
+    print_stats_for(logs)
   end
 
   def self.parse_log(file)
