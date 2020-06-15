@@ -19,7 +19,7 @@ class Formatter
 
   def format_visits_by_page
     output = "Visits by page: \n"
-    visits_by_page(@logs).each do |a|
+    visits_by_page.each do |a|
       output += "#{a.first} \t #{a.last} visits \n"
     end
     output
@@ -27,7 +27,7 @@ class Formatter
 
   def format_uniques_by_page
     output = "Unique views by page: \n"
-    uniques_by_page(@logs).each do |a|
+    uniques_by_page.each do |a|
       output += "#{a.first} \t #{a.last} unique views \n"
     end
     output
