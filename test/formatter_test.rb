@@ -3,9 +3,9 @@
 require_relative 'spec_helper'
 
 describe Formatter do
+  include SpecHelper
   before do
-    @logs = Parser.new(File.new('./test/test.log')).logged_visits
-    @formatter = Formatter.new(@logs)
+    @formatter = Formatter.new(parsed_logs)
   end
 
   describe 'outputs formatted data to the console' do
