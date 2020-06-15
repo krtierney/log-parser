@@ -10,11 +10,7 @@ describe Stats do
   end
 
   describe '#visits_by_page' do
-    it 'returns a 2d array of visit counts per path' do
-      _(@formatter.visits_by_page).must_be_instance_of Array
-    end
-
-    it 'matches expected output for the test log' do
+    it 'tallies the total visits from any IP for a given path' do
       expected_values = [['/index', 6], ['/help_page/1', 5], ['/home', 3], ['/contact', 3], ['/about', 2]]
       assert_equal(@formatter.visits_by_page, expected_values)
     end
